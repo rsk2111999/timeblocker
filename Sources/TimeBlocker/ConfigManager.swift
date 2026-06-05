@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import CryptoKit
 
 class ConfigManager: ObservableObject {
     static let shared = ConfigManager()
@@ -8,6 +9,7 @@ class ConfigManager: ObservableObject {
     @Published var isEnabled: Bool = true
     @Published var pauseUntil: Date? = nil
     @Published var focusUntil: Date? = nil
+    @Published var passwordHash: String = ""
 
     private var configURL: URL {
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
@@ -20,10 +22,18 @@ class ConfigManager: ObservableObject {
         var isEnabled: Bool
         var pauseUntil: Date?
         var focusUntil: Date?
+        var passwordHash: String?
         var blockedApps: [BlockedApp]
     }
 
     private init() { load() }
+
+    func verifyPassword(_ input: String) -> Bool {
+        guard !passwordHash.isEmpty else { return true }
+        let hash = SHA256.hash(data: Data(input.utf8))
+        let hex  = hash.compactMap { String(format: "%02x", $0) }.joined()
+        return hex == passwordHash
+    }
 
     var isEffectivelyEnabled: Bool {
         guard isEnabled else { return false }
@@ -39,14 +49,17 @@ class ConfigManager: ObservableObject {
     func load() {
         guard let data = try? Data(contentsOf: configURL),
               let c = try? JSONDecoder().decode(Config.self, from: data) else { return }
-        isEnabled   = c.isEnabled
-        pauseUntil  = c.pauseUntil
-        focusUntil  = c.focusUntil
-        blockedApps = c.blockedApps
+        isEnabled    = c.isEnabled
+        pauseUntil   = c.pauseUntil
+        focusUntil   = c.focusUntil
+        passwordHash = c.passwordHash ?? ""
+        blockedApps  = c.blockedApps
     }
 
     func save() {
-        let c = Config(isEnabled: isEnabled, pauseUntil: pauseUntil, focusUntil: focusUntil, blockedApps: blockedApps)
+        let c = Config(isEnabled: isEnabled, pauseUntil: pauseUntil, focusUntil: focusUntil,
+                       passwordHash: passwordHash.isEmpty ? nil : passwordHash,
+                       blockedApps: blockedApps)
         try? JSONEncoder().encode(c).write(to: configURL)
     }
 
