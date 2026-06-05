@@ -69,6 +69,12 @@ struct MenuBarView: View {
         }
         .keyboardShortcut(",", modifiers: .command)
 
+        Button("Check for Updates…") {
+            UpdateChecker.checkAndNotify()
+        }
+
+        Divider()
+
         Button("Quit Time Blocker") { NSApp.terminate(nil) }
     }
 

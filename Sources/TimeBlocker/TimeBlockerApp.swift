@@ -25,6 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Register as a login item (appears in System Settings → General → Login Items)
         try? SMAppService.mainApp.register()
+
+        // Silently check for updates on every launch
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+            UpdateChecker.checkSilently()
+        }
     }
 
     func applicationWillTerminate(_ notification: Notification) {
