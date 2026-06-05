@@ -46,9 +46,10 @@ class BlockerService {
         let shouldBlock = blocked.isCurrentlyBlocked || config.isFocusActive
         guard shouldBlock else { return }
 
+        let reason = config.isFocusActive ? "focus" : "schedule"
         app.forceTerminate()
-        let reason = config.isFocusActive ? "Focus mode is active." : "Blocked during this time."
-        notify(appName: blocked.name, reason: reason)
+        StatsManager.shared.logBlock(appName: blocked.name, reason: reason)
+        notify(appName: blocked.name, reason: config.isFocusActive ? "Focus mode is active." : "Blocked during this time.")
     }
 
     private func notify(appName: String, reason: String) {

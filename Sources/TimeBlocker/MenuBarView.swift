@@ -69,6 +69,10 @@ struct MenuBarView: View {
         }
         .keyboardShortcut(",", modifiers: .command)
 
+        Button("This Week's Summary") {
+            WeeklySummaryWindowController.shared.show()
+        }
+
         Button("Check for Updates…") {
             UpdateChecker.checkAndNotify()
         }

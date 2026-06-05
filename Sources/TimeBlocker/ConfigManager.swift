@@ -65,13 +65,15 @@ class ConfigManager: ObservableObject {
 
     func startFocus(for duration: TimeInterval) {
         focusUntil = Date().addingTimeInterval(duration)
-        pauseUntil = nil   // cancel any active pause
+        pauseUntil = nil
         save()
+        StatsManager.shared.logFocusStart()
     }
 
     func endFocus() {
         focusUntil = nil
         save()
+        StatsManager.shared.logFocusEnd()
     }
 
     func add(_ app: BlockedApp) {

@@ -30,6 +30,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
             UpdateChecker.checkSilently()
         }
+
+        // Hourly check — shows weekly summary on Friday evening / Saturday morning
+        Timer.scheduledTimer(withTimeInterval: 3600, repeats: true) { _ in
+            StatsManager.shared.checkAndShowWeeklySummary()
+        }
+        // Also check immediately on launch (catches missed Friday windows)
+        StatsManager.shared.checkAndShowWeeklySummary()
     }
 
     func applicationWillTerminate(_ notification: Notification) {
