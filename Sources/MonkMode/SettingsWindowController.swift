@@ -7,7 +7,7 @@ class SettingsWindowController: NSWindowController, NSWindowDelegate {
     private init() {
         let hosting = NSHostingController(rootView: SettingsView())
         let window  = NSWindow(contentViewController: hosting)
-        window.title        = "Time Blocker — Settings"
+        window.title        = "Monk Mode — Settings"
         window.styleMask    = [.titled, .closable, .resizable, .miniaturizable]
         window.setContentSize(NSSize(width: 640, height: 440))
         window.minSize      = NSSize(width: 520, height: 360)

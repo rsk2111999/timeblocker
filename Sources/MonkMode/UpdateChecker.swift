@@ -5,8 +5,8 @@ enum UpdateChecker {
     // ⚠️ Bump this every release — must match the GitHub tag (without "v")
     static let currentVersion = "1.0.1"
 
-    private static let apiURL  = "https://api.github.com/repos/ritwik211/timeblocker/releases/latest"
-    private static let pageURL = URL(string: "https://github.com/ritwik211/timeblocker/releases/latest")!
+    private static let apiURL  = "https://api.github.com/repos/ritwik211/monkmode/releases/latest"
+    private static let pageURL = URL(string: "https://github.com/ritwik211/monkmode/releases/latest")!
 
     /// Called on launch — silent (no alert if already up to date)
     static func checkSilently() {
@@ -54,7 +54,7 @@ enum UpdateChecker {
         NSApp.activate(ignoringOtherApps: true)
 
         let alert = NSAlert()
-        alert.messageText     = "Time Blocker \(version) is available"
+        alert.messageText     = "Monk Mode \(version) is available"
         alert.informativeText = "You have \(currentVersion). Download the new version and drag it to /Applications to update.\n\nWhat's new:\n\(notes.prefix(300))"
         alert.alertStyle      = .informational
         alert.addButton(withTitle: "Download Update")
@@ -70,7 +70,7 @@ enum UpdateChecker {
 
         let alert = NSAlert()
         alert.messageText     = "You're up to date"
-        alert.informativeText = "Time Blocker \(currentVersion) is the latest version."
+        alert.informativeText = "Monk Mode \(currentVersion) is the latest version."
         alert.alertStyle      = .informational
         alert.addButton(withTitle: "OK")
         alert.runModal()

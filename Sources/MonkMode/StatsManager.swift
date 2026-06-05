@@ -52,7 +52,7 @@ class StatsManager {
 
     private var storeURL: URL {
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        let dir = support.appendingPathComponent("TimeBlocker")
+        let dir = support.appendingPathComponent("MonkMode")
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir.appendingPathComponent("stats.json")
     }

@@ -13,7 +13,7 @@ class ConfigManager: ObservableObject {
 
     private var configURL: URL {
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        let dir = support.appendingPathComponent("TimeBlocker")
+        let dir = support.appendingPathComponent("MonkMode")
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir.appendingPathComponent("config.json")
     }

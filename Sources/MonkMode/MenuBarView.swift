@@ -79,7 +79,7 @@ struct MenuBarView: View {
 
         Divider()
 
-        Button("Quit Time Blocker") { NSApp.terminate(nil) }
+        Button("Quit Monk Mode") { NSApp.terminate(nil) }
     }
 
     // MARK: - Password gate

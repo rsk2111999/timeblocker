@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP="TimeBlocker"
+APP="MonkMode"
 BUNDLE="${APP}.app"
 DEST="/Applications/${BUNDLE}"
 
@@ -30,5 +30,5 @@ echo "✅ Installed to ${DEST}"
 open "${DEST}"
 echo "✅ Launched ${APP}"
 echo ""
-echo "Time Blocker is now running in your menu bar (⏱)."
+echo "Monk Mode is now running in your menu bar (⏱)."
 echo "It auto-starts on login — check System Settings → General → Login Items."

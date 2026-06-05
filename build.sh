@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP="TimeBlocker"
+APP="MonkMode"
 BUNDLE="${APP}.app"
 
 echo "⏱  Building ${APP}..."
@@ -19,7 +19,7 @@ mkdir -p "${BUNDLE}/Contents/MacOS"
 mkdir -p "${BUNDLE}/Contents/Resources"
 
 cp "${BINARY}" "${BUNDLE}/Contents/MacOS/${APP}"
-cp "Sources/TimeBlocker/Resources/Info.plist" "${BUNDLE}/Contents/Info.plist"
+cp "Sources/MonkMode/Resources/Info.plist" "${BUNDLE}/Contents/Info.plist"
 chmod +x "${BUNDLE}/Contents/MacOS/${APP}"
 
 echo ""

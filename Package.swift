@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "TimeBlocker",
+    name: "MonkMode",
     platforms: [
         .macOS(.v13)
     ],
     targets: [
         .executableTarget(
-            name: "TimeBlocker",
-            path: "Sources/TimeBlocker",
+            name: "MonkMode",
+            path: "Sources/MonkMode",
             exclude: ["Resources"]
         )
     ]

@@ -1,4 +1,4 @@
-# Time Blocker
+# Monk Mode
 
 A macOS menu bar app that blocks distracting apps on a schedule — with a **password-locked focus mode** you can't wriggle out of.
 
@@ -6,12 +6,12 @@ A macOS menu bar app that blocks distracting apps on a schedule — with a **pas
 
 ## Install
 
-1. Download [**TimeBlocker-macOS.zip**](https://github.com/ritwik211/timeblocker/releases/latest)
-2. Unzip and drag `TimeBlocker.app` to `/Applications`
+1. Download [**MonkMode-macOS.zip**](https://github.com/ritwik211/monkmode/releases/latest)
+2. Unzip and drag `MonkMode.app` to `/Applications`
 3. **Right-click → Open** (required once — macOS security prompt)
 4. Find the **⏱** icon in your menu bar
 
-> Auto-login: System Settings → General → Login Items → add `TimeBlocker`
+> Auto-login: System Settings → General → Login Items → add `MonkMode`
 
 ---
 
@@ -46,9 +46,9 @@ Click **⏱ → Settings…** to:
 ## Build from source
 
 ```bash
-git clone https://github.com/ritwik211/timeblocker
-cd timeblocker
-./build.sh          # produces TimeBlocker.app
+git clone https://github.com/ritwik211/monkmode
+cd monkmode
+./build.sh          # produces MonkMode.app
 ./install.sh        # copies to /Applications and launches
 ```
 

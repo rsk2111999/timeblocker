@@ -3,11 +3,11 @@ import UserNotifications
 import ServiceManagement
 
 @main
-struct TimeBlockerApp: App {
+struct MonkModeApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
-        MenuBarExtra("Time Blocker", systemImage: "timer") {
+        MenuBarExtra("Monk Mode", systemImage: "timer") {
             MenuBarView()
         }
         .menuBarExtraStyle(.menu)
