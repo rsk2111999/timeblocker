@@ -61,9 +61,9 @@ struct MenuBarView: View {
         Divider()
 
         Button("Settings…") {
-            NSApp.activate(ignoringOtherApps: true)
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+            SettingsWindowController.shared.show()
         }
+        .keyboardShortcut(",", modifiers: .command)
 
         Button("Quit Time Blocker") { NSApp.terminate(nil) }
     }

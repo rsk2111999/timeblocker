@@ -11,10 +11,6 @@ struct TimeBlockerApp: App {
             MenuBarView()
         }
         .menuBarExtraStyle(.menu)
-
-        Settings {
-            SettingsView()
-        }
     }
 }
 
