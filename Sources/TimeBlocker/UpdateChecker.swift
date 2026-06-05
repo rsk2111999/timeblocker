@@ -5,8 +5,8 @@ enum UpdateChecker {
     // ⚠️ Bump this every release — must match the GitHub tag (without "v")
     static let currentVersion = "1.0.1"
 
-    private static let apiURL  = "https://api.github.com/repos/rsk2111999/timeblocker/releases/latest"
-    private static let pageURL = URL(string: "https://github.com/rsk2111999/timeblocker/releases/latest")!
+    private static let apiURL  = "https://api.github.com/repos/ritwik211/timeblocker/releases/latest"
+    private static let pageURL = URL(string: "https://github.com/ritwik211/timeblocker/releases/latest")!
 
     /// Called on launch — silent (no alert if already up to date)
     static func checkSilently() {

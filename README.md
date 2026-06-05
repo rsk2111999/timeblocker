@@ -6,7 +6,7 @@ A macOS menu bar app that blocks distracting apps on a schedule — with a **pas
 
 ## Install
 
-1. Download [**TimeBlocker-macOS.zip**](https://github.com/rsk2111999/timeblocker/releases/latest)
+1. Download [**TimeBlocker-macOS.zip**](https://github.com/ritwik211/timeblocker/releases/latest)
 2. Unzip and drag `TimeBlocker.app` to `/Applications`
 3. **Right-click → Open** (required once — macOS security prompt)
 4. Find the **⏱** icon in your menu bar
@@ -46,7 +46,7 @@ Click **⏱ → Settings…** to:
 ## Build from source
 
 ```bash
-git clone https://github.com/rsk2111999/timeblocker
+git clone https://github.com/ritwik211/timeblocker
 cd timeblocker
 ./build.sh          # produces TimeBlocker.app
 ./install.sh        # copies to /Applications and launches

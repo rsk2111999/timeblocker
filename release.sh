@@ -49,6 +49,6 @@ $NOTES
 
 echo ""
 echo "✅ Released v$VERSION"
-echo "   Download: https://github.com/rsk2111999/timeblocker/releases/download/v$VERSION/$ZIPNAME"
+echo "   Download: https://github.com/ritwik211/timeblocker/releases/download/v$VERSION/$ZIPNAME"
 echo ""
 echo "Existing users will see an update prompt next time they launch the app."
